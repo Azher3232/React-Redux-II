@@ -3,7 +3,7 @@ import "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { CartArticle, CartDetails } from "./styles";
 import Item from "./Item";
-import { removeFromCart } from "../../actions";
+import { removeFromCart } from "../../state/cartSlice";
 
 const Cart = () => {
   const cartProducts = useSelector((state) => state.cart.items);
@@ -28,7 +28,7 @@ const Cart = () => {
           );
         })
       ) : (
-        <CartDetails>You don't have item in your cart</CartDetails>
+        <CartDetails>You don't have items in your cart</CartDetails>
       )}
     </CartArticle>
   );

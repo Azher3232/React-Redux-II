@@ -3,15 +3,14 @@ import "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { StyledArticle } from "./styles";
 import Product from "./Product";
-import { addToCart } from "../../actions";
-import { FAILED, IDLE, LOADING, SUCCEEDED } from "../../state/status";
+import { IDLE } from "../../state/status";
+import { addToCart } from "../../state/cartSlice";
 import { fetchProducts } from "../../state/productsSlice";
 import Spinner from "../Spinner";
 
 const ProductList = () => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.productsItems);
-  console.log("PRODUCTS", products);
   const status = useSelector((state) => state.products.status);
 
   useEffect(() => {
